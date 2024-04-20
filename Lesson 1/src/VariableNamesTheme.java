@@ -1,4 +1,5 @@
 public class VariableNamesTheme {
+    @SuppressWarnings("checkstyle:LocalVariableName")
     public static void main(String[] args) {
         System.out.println("1. Разные переменные");
         // цифра
@@ -18,8 +19,8 @@ public class VariableNamesTheme {
         System.out.println("Максимальное число = " + maxNumber);
         
         // количество десятков
-        int numberOfDozens = 4;
-        System.out.println("Количество десятков = " + numberOfDozens);
+        int numberOfTens = 4;
+        System.out.println("Количество десятков = " + numberOfTens);
         
         // вес собаки
         int weightOfDog = 10;
@@ -30,8 +31,8 @@ public class VariableNamesTheme {
         System.out.println("Исходное число = " + originalNumber);
         
         // процент по вкладу
-        int depositInterest = 15;
-        System.out.println("Процент по вкладу = " + depositInterest + " %");
+        int rate = 15;
+        System.out.println("Процент по вкладу = " + rate + " %");
         
         // переменная хранит символ &
         char ampersandSymbol = '&';
@@ -62,8 +63,8 @@ public class VariableNamesTheme {
         System.out.println("Математическое выражение: " + mathExpression);
         
         // выбор
-        String optionToSelect = "Yes";
-        System.out.println("Выбор — " + optionToSelect);
+        String selection = "Yes";
+        System.out.println("Выбор — " + selection);
         
         // счет в игре
         int gameScore = 4000;
@@ -90,8 +91,8 @@ public class VariableNamesTheme {
         System.out.println("Окончание диапазона — " + endOfRange);
         
         // полное имя работника месяца
-        String nameEmployeeOfTheMonth = "Иван";
-        System.out.println("Работник месяца: " + nameEmployeeOfTheMonth);
+        String FullNameEmployeeOfMonth = "Иван";
+        System.out.println("Работник месяца: " + FullNameEmployeeOfMonth);
         
         // заголовок электронной книги
         String ebookTitle = "Преступление и наказание";
@@ -120,28 +121,28 @@ public class VariableNamesTheme {
         System.out.println("\n2. Boolean-переменные");
         
         // сотни равны?
-        boolean areHundredsEqual = true;
-        System.out.println("Сотни равны? " + areHundredsEqual);
+        boolean equalHundreds = true;
+        System.out.println("Сотни равны? " + equalHundreds);
         
         // компьютер включен?
-        boolean isComputerTurnedOn = false;
-        System.out.println("Компьютер включен? " + isComputerTurnedOn);
+        boolean isActiveComputer = false;
+        System.out.println("Компьютер включен? " + isActiveComputer);
         
         // есть равные цифры?
-        boolean areThereEqualNumbers = true;
-        System.out.println("Есть равные числа? " + areThereEqualNumbers);
+        boolean hasEqualNumbers = true;
+        System.out.println("Есть равные числа? " + hasEqualNumbers);
         
         // создано?
-        boolean isCreated = false;
-        System.out.println("Создано? " + isCreated);
+        boolean create = false;
+        System.out.println("Создано? " + create);
         
         // пустое?
-        boolean isEmpty = true;
-        System.out.println("Создано? " + isEmpty);
+        boolean empty = true;
+        System.out.println("Создано? " + empty);
         
         // активное?
-        boolean isActive = false;
-        System.out.println("Активное? " + isActive);
+        boolean active = false;
+        System.out.println("Активное? " + active);
         
         // новое?
         boolean isNew = true;
@@ -152,8 +153,8 @@ public class VariableNamesTheme {
         System.out.println("Электронная почта действительна? " + isEmailValid);
         
         // имеются уникальные строки?
-        boolean areThereUniqueString = true;
-        System.out.println("Имеются уникальные строки? " + areThereUniqueString);
+        boolean hasUniqueString = true;
+        System.out.println("Имеются уникальные строки? " + hasUniqueString);
         
         System.out.println("\n3. Аббревиатуры");
         
@@ -170,19 +171,19 @@ public class VariableNamesTheme {
         System.out.println("Емкость жесткого диска: " + hddCapacity + " Гб");
         
         // протокол передачи гипертекста
-        String httProtocol = "HTTP";
-        System.out.println("Протокол передачи гипертекста — " + httProtocol);
+        String http = "HTTP";
+        System.out.println("Протокол передачи гипертекста — " + http);
         
         // сокращенный uniform resource locator
-        String urlShortening = "TinyUrL";
-        System.out.println("Cокращенный uniform resource locator: " + urlShortening);
+        String shortUrl = "TinyUrL";
+        System.out.println("Cокращенный uniform resource locator: " + shortUrl);
         
         // новый идентификатор клиента
-        String newCuid = "user111";
-        System.out.println("Новый идентификатор клиента: " + newCuid);
+        String newCid = "user111";
+        System.out.println("Новый идентификатор клиента: " + newCid);
         
         // кодировка american standard code for information interchange
-        String codeAscii = "ASCII";
-        System.out.println("Кодировка american standard code for information interchange: " + codeAscii);
+        String asciiEncoding = "ASCII";
+        System.out.println("Кодировка american standard code for information interchange: " + asciiEncoding);
     }
 }
