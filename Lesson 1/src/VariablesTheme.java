@@ -43,7 +43,7 @@ public class VariablesTheme {
         System.out.println("Тип byte:");
         byte maxByte = Byte.MAX_VALUE;
         System.out.println(maxByte + "\n" + (++maxByte) + "\n" + (--maxByte));
-
+        
         System.out.println("\nТип short:");
         short maxShort = Short.MAX_VALUE;
         System.out.println(maxShort + "\n" + (++maxShort) + "\n" + (--maxShort));
@@ -75,7 +75,7 @@ public class VariablesTheme {
                 "\nПеременная 2 = " + num2);
         
         num1 ^= num2;
-        num2 = num1 ^ num2;
+        num2 ^= num1;
         num1 ^= num2;
         System.out.println("\nПерестановка с помощью побитовой операции ^: \nПеременная 1 = " + num1 +
                 "\nПеременная 2 = " + num2);
@@ -117,7 +117,7 @@ public class VariablesTheme {
         System.out.println("Число " + originalNumber + " содержит:\n" +
                 "  сотен — " + numberHundreds + "\n" +
                 "  десятков — " + numberTens + "\n" +
-                "  едниц – " + numberOnes + "\n" +
+                "  единиц – " + numberOnes + "\n" +
                 "Сумма его цифр = " + sumDigits + "\n" +
                 "Произведение = " + productDigits);
         

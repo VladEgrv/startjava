@@ -1,5 +1,4 @@
 public class VariableNamesTheme {
-    @SuppressWarnings("checkstyle:LocalVariableName")
     public static void main(String[] args) {
         System.out.println("1. Разные переменные");
         // цифра
@@ -8,7 +7,7 @@ public class VariableNamesTheme {
         
         // сумма чисел
         int sumOfNumbers = 5;
-        System.out.println("Сумма числел = " + sumOfNumbers);
+        System.out.println("Сумма чисел = " + sumOfNumbers);
         
         // произведение цифр
         int productOfDigits = 4;
@@ -91,8 +90,8 @@ public class VariableNamesTheme {
         System.out.println("Окончание диапазона — " + endOfRange);
         
         // полное имя работника месяца
-        String FullNameEmployeeOfMonth = "Иван";
-        System.out.println("Работник месяца: " + FullNameEmployeeOfMonth);
+        String fullNameEmployeeOfMonth = "Иван";
+        System.out.println("Работник месяца: " + fullNameEmployeeOfMonth);
         
         // заголовок электронной книги
         String ebookTitle = "Преступление и наказание";
@@ -121,8 +120,8 @@ public class VariableNamesTheme {
         System.out.println("\n2. Boolean-переменные");
         
         // сотни равны?
-        boolean equalHundreds = true;
-        System.out.println("Сотни равны? " + equalHundreds);
+        boolean isEqualHundreds = true;
+        System.out.println("Сотни равны? " + isEqualHundreds);
         
         // компьютер включен?
         boolean isActiveComputer = false;
@@ -133,8 +132,8 @@ public class VariableNamesTheme {
         System.out.println("Есть равные числа? " + hasEqualNumbers);
         
         // создано?
-        boolean create = false;
-        System.out.println("Создано? " + create);
+        boolean isCreated = false;
+        System.out.println("Создано? " + isCreated);
         
         // пустое?
         boolean empty = true;
@@ -149,12 +148,12 @@ public class VariableNamesTheme {
         System.out.println("Новое? " + isNew);
      
         // электронная почта действительная?
-        boolean isEmailValid = false;
-        System.out.println("Электронная почта действительна? " + isEmailValid);
+        boolean isValidEmail = false;
+        System.out.println("Электронная почта действительна? " + isValidEmail);
         
         // имеются уникальные строки?
-        boolean hasUniqueString = true;
-        System.out.println("Имеются уникальные строки? " + hasUniqueString);
+        boolean hasUniqueStrings = true;
+        System.out.println("Имеются уникальные строки? " + hasUniqueStrings);
         
         System.out.println("\n3. Аббревиатуры");
         
