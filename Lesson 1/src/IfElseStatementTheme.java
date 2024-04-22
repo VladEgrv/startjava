@@ -49,17 +49,13 @@ public class IfElseStatementTheme {
         if (checkedNum == 0) {
             System.out.println("Число равно нулю");
         } else {
-            String parity;
+            String parity = "нечетным";
             if (checkedNum % 2 == 0) {
                 parity = "четным";
-            } else {
-                parity = "нечетным";
             }
-            String signNum;
+            String signNum = "отрицательным";
             if (checkedNum > 0) {
                 signNum = "положительным";
-            } else {
-                signNum = "отрицательным";
             }
             System.out.println(checkedNum + " является " + signNum + " и " + parity);
         }
@@ -68,19 +64,19 @@ public class IfElseStatementTheme {
         num1 = 123;
         num2 = 223;
         System.out.println("Исходные числа: " + num1 + " | " + num2);
-        boolean isPosition1Match = (num1 % 10) == (num2 % 10);
-        boolean isPosition2Match = (num1 % 100) / 10 == (num2 % 100) / 10;
-        boolean isPosition3Match = num1 / 100 == num2 / 100;
-        if (!isPosition1Match && !isPosition2Match && !isPosition3Match) {
+        boolean hasEqualOnes = (num1 % 10) == (num2 % 10);
+        boolean hasEqualTens = (num1 % 100) / 10 == (num2 % 100) / 10;
+        boolean hasEqualHundreds = num1 / 100 == num2 / 100;
+        if (!hasEqualOnes && !hasEqualTens && !hasEqualHundreds) {
             System.out.println("Равных цифр нет");
         } else {
-            if (isPosition1Match) {
+            if (hasEqualOnes) {
                 System.out.println("Цифра: " + (num1 % 10) + ". Разряд: 1");
             }
-            if (isPosition2Match) {
+            if (hasEqualTens) {
                 System.out.println("Цифра: " + ((num1 % 100) / 10) + ". Разряд: 2");
             }
-            if (isPosition3Match) {
+            if (hasEqualHundreds) {
                 System.out.println("Цифра: " + (num1 / 100) + ". Разряд: 3");
             }
         }
@@ -98,23 +94,20 @@ public class IfElseStatementTheme {
         }
         
         System.out.println("\n6. Подсчет суммы вклада и начисленных банком %");
-        BigDecimal deposit = new BigDecimal(301000);
+        int deposit = 301000;
         System.out.println("Сумма вклада: " + deposit);
         BigDecimal rate = new BigDecimal("0.05");
-        if ((deposit.compareTo(new BigDecimal(100000)) >= 0 &&
-                deposit.compareTo(new BigDecimal(300000)) <= 0)) {
+        if (deposit >= 100000 && deposit <= 300000) {
             rate = new BigDecimal("0.07");
-        } else if (deposit.compareTo(new BigDecimal(300000)) > 0) {
+        } else if (deposit > 300000) {
             rate = new BigDecimal("0.10");
         }
-        BigDecimal charges = deposit.multiply(rate);
-        System.out.println("Сумма накопленного процента: " + charges + "\nИтоговая сумма с процентами: " +
-                deposit.add(charges));
+        BigDecimal charges = new BigDecimal(deposit).multiply(rate);
+        System.out.println("Сумма накопленного процента: " + charges + "\n" +
+                "Итоговая сумма с процентами: " + new BigDecimal(deposit).add(charges));
         
         System.out.println("\n7. Определение оценки по предметам");
         int historyRate = 59;
-        int programmingRate = 92;
-        
         int historyGrade = 5;
         if (historyRate <= 60) {
             historyGrade = 2;
@@ -124,6 +117,7 @@ public class IfElseStatementTheme {
             historyGrade = 4;
         }
         
+        int programmingRate = 92;
         int programmingGrade = 5;
         if (programmingRate <= 60) {
             programmingGrade = 2;
@@ -133,8 +127,8 @@ public class IfElseStatementTheme {
             programmingGrade = 4;
         }
         
-        float averageRate = (float) (historyRate + programmingRate) / 2.0f;
-        float averageMark = (float) (historyGrade + programmingGrade) / 2.0f;
+        float averageRate = (historyRate + programmingRate) / 2f;
+        float averageMark = (historyGrade + programmingGrade) / 2f;
         
         System.out.println("История — " + historyGrade + "\n" +
                 "Программирование — " + programmingGrade + "\n" +
@@ -146,9 +140,11 @@ public class IfElseStatementTheme {
         BigDecimal rentMonth = new BigDecimal("5000");
         BigDecimal productionCostMonth = new BigDecimal("9000");
         
-        BigDecimal incomeYear = revenueMonth.subtract(rentMonth).subtract(
-                productionCostMonth).multiply(new BigDecimal("12"));
-        if (incomeYear.compareTo(new BigDecimal("0")) > 0) {
+        BigDecimal incomeYear = revenueMonth
+                .subtract(rentMonth)
+                .subtract(productionCostMonth)
+                .multiply(new BigDecimal("12"));
+        if (incomeYear.compareTo(BigDecimal.ZERO) > 0) {
             System.out.println("Прибыль за год: +" + incomeYear + " руб.");
         } else {
             System.out.println("Прибыль за год: " + incomeYear + " руб.");
