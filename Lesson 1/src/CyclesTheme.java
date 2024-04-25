@@ -1,11 +1,11 @@
 public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("1. Подсчет суммы четных и нечетных чисел");
-        int startCycle = -10;
-        int endCycle = 21;
+        int startSegment = -10;
+        int endSegment = 21;
         int sumEven = 0;
         int sumOdd = 0;
-        int counter = startCycle;
+        int counter = startSegment;
         do {
             if (counter % 2 == 0) {
                 sumEven += counter;
@@ -13,78 +13,78 @@ public class CyclesTheme {
                 sumOdd += counter;
             }
             counter += 1;
-        } while (counter <= endCycle);
-        System.out.println("В отрезке [" + startCycle + ", " + endCycle + "] сумма четных чисел = " +
+        } while (counter <= endSegment);
+        System.out.println("В отрезке [" + startSegment + ", " + endSegment + "] сумма четных чисел = " +
                 sumEven + ", а нечетных = " + sumOdd);
         
         System.out.println("\n2. Вывод чисел в порядке убывания");
-        int num1 = 10;
-        int num2 = 5;
-        int num3 = -1;
+        int a = 10;
+        int b = 5;
+        int c = -1;
         
-        int minNum = num1;
-        if (minNum > num2) {
-            minNum = num2;
+        int min = a;
+        if (min > b) {
+            min = b;
         }
-        if (minNum > num3) {
-            minNum = num3;
+        if (min > c) {
+            min = c;
         }
-        int maxNum = num1;
-        if (maxNum < num2) {
-            maxNum = num2;
+        int max = a;
+        if (max < b) {
+            max = b;
         }
-        if (maxNum < num3) {
-            maxNum = num3;
+        if (max < c) {
+            max = c;
         }
-        for (int i = maxNum - 1; i > minNum; i--) {
+        for (int i = max - 1; i > min; i--) {
             System.out.print(i + " ");
         }
         System.out.println();
         
-        System.out.println("\n3. Вывод реверсивного числа и суммы его цифр");
-        num1 = 1234;
+        System.out.println("\n3. Вывод реверсивного числа и суммы его цифр\n");
+        int initNumber = 1234;
         int sumDigits = 0;
-        while (num1 != 0) {
-            sumDigits += num1 % 10;
-            System.out.print(num1 % 10);
-            num1 /= 10;
+        while (initNumber != 0) {
+            int lastNumber = initNumber % 10;
+            sumDigits += lastNumber;
+            System.out.print(lastNumber);
+            initNumber /= 10;
         }
-        System.out.println("\n" + sumDigits);
+        System.out.println(sumDigits);
         
         System.out.println("\n4. Вывод чисел в несколько строк");
-        counter = 0;
-        for (int i = 1 + 1; i <= 24; i++) {
+        int lineCounter = 0;
+        for (int i = 1; i < 24; i++) {
             if (i % 2 != 0) {
                 System.out.printf("%3d", i);
-                counter += 1;
-                if (counter % 5 == 0) {
+                lineCounter++;
+                if (lineCounter % 5 == 0) {
                     System.out.println();
                 }
             }
         }
-        if (counter % 5 != 0) {
-            while (counter % 5 != 0) {
+        if (lineCounter % 5 != 0) {
+            while (lineCounter % 5 != 0) {
                 System.out.printf("%3d", 0);
-                counter += 1;
+                lineCounter += 1;
             }
         }
-        System.out.println();
         
-        System.out.println("\n5. Проверка количества двоек числа на четность/нечетность");
-        num1 = 3242592;
-        num2 = num1;
-        String evenOdd = "нечетное";
-        counter = 0;
-        while (num2 != 0) {
-            if (num2 % 10 == 2) {
-                counter += 1;
+        System.out.println("\n\n5. Проверка количества двоек числа на четность/нечетность");
+        initNumber = 3242592;
+        int initNumberCopy = initNumber;
+        int countTwos = 0;
+        while (initNumberCopy != 0) {
+            if (initNumberCopy % 10 == 2) {
+                countTwos += 1;
             }
-            num2 /= 10;
+            initNumberCopy /= 10;
         }
-        if (counter % 2 == 0) {
+        String evenOdd = "нечетное";
+        if (countTwos % 2 == 0) {
             evenOdd = "четное";
         }
-        System.out.println("В " + num1 + " " + evenOdd + " количество двоек — " + counter);
+        System.out.println("В " + initNumber + " " + evenOdd + " количество двоек — " + countTwos);
         
         System.out.println("\n6. Отображение геометрических фигур");
         for (int i = 1; i <= 5; i++) {
@@ -110,36 +110,36 @@ public class CyclesTheme {
         System.out.println();
         
         int height = 3;
-        num1 = 1;
+        int num = 1;
         boolean increasing = true;
         do {
             counter = 0;
             do {
                 System.out.print("$");
                 counter++;
-            } while (counter < num1);
+            } while (counter < num);
             System.out.println();
             if (increasing) {
-                num1++;
-                if (num1 > height) {
+                num++;
+                if (num > height) {
                     increasing = false;
-                    num1 -= 2;
+                    num -= 2;
                 }
             } else {
-                num1--;
+                num--;
             }
-        } while (num1 > 0);
+        } while (num > 0);
         
         System.out.println("\n7. Отображение ASCII-символов");
         System.out.printf("%-10s%-12s%-25s\n", "DECIMAL", "CHARACTER", "DESCRIPTION");
         String description;
         for (int i = 33; i < 48; i += 2) {
-            char c = (char) i;
+            c = (char) i;
             description = Character.getName(i);
             System.out.printf("  %-12s%-13s%-20s\n", i, c, description);
         }
         for (int i = 98; i <= 122; i += 2) {
-            char c = (char) i;
+            c = (char) i;
             description = Character.getName(i);
             System.out.printf("  %-12s%-13s%-20s\n", i, c, description);
         }
