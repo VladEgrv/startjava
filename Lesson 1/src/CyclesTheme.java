@@ -76,7 +76,7 @@ public class CyclesTheme {
         int countTwos = 0;
         while (initNumberCopy != 0) {
             if (initNumberCopy % 10 == 2) {
-                countTwos += 1;
+                countTwos++;
             }
             initNumberCopy /= 10;
         }
