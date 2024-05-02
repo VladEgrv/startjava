@@ -1,5 +1,3 @@
-package lesson2;
-
 public class Person {
     char gender = 'M';
     String name = "Иван";
@@ -23,7 +21,7 @@ public class Person {
         System.out.println(name + " говорит");
     }
     
-    public void teach() {
+    public void learnJava() {
         System.out.println(name + " учит");
     }
 }
