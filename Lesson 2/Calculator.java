@@ -2,7 +2,6 @@ public class Calculator {
     private int number1;
     private int number2;
     private char sign;
-    private int result = Integer.MIN_VALUE;
     
     public int getNumber2() {
         return number2;
@@ -28,37 +27,29 @@ public class Calculator {
         this.sign = sign;
     }
     
-    public int calculation() {
+    public int calculate() throws ArithmeticException, UnsupportedOperationException {
         switch (sign) {
             case '+':
-                result = number1 + number2;
-                break;
+                return number1 + number2;
             case '-':
-                result = number1 - number2;
-                break;
+                return number1 - number2;
             case '*':
-                result = number1 * number2;
-                break;
+                return number1 * number2;
             case '/':
-                if (number2 != 0) {
-                    result = number1 / number2;
-                } else {
-                    System.out.println("Делить на ноль нельзя");
+                if (number2 == 0) {
+                    throw new ArithmeticException("Деление на ноль невозможно");
                 }
-                break;
+                return number1 / number2;
             case '%':
-                result = number1 % number2;
-                break;
+                return number1 % number2;
             case '^':
-                result = 1;
+                int result = 1;
                 for (int i = 0; i < number2; i++) {
                     result *= number1;
                 }
-                break;
+                return result;
             default:
-                System.out.println("Введенная операция не поддерживается");
-                break;
+                throw new UnsupportedOperationException("Операция " + sign + " не поддерживается");
         }
-        return result;
     }
 }
