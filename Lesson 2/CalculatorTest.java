@@ -9,10 +9,11 @@ public class CalculatorTest {
         
         do {
             try {
-                performCalculation();
+                int result = performCalculation();
+                displayResult(result);
             } catch (ArithmeticException | UnsupportedOperationException e) {
                 System.out.println("Ошибка: " + e.getMessage());
-            } catch (Exception e) {
+            } catch (RuntimeException e) {
                 System.out.println("Введены некорректные данные.");
                 scanner.nextLine();
             }
@@ -26,17 +27,20 @@ public class CalculatorTest {
         scanner.close();
     }
     
-    private static void performCalculation() {
+    private static int performCalculation() {
         System.out.print("Введите первое число: ");
-        calc.setNumber1(scanner.nextInt());
+        calc.setArg1(scanner.nextInt());
         
         System.out.print("Введите знак математической операции: ");
         calc.setSign(scanner.next().charAt(0));
         
         System.out.print("Введите второе число: ");
-        calc.setNumber2(scanner.nextInt());
+        calc.setArg2(scanner.nextInt());
         
-        int result = calc.calculate();
-        System.out.printf("%d %c %d = %d\n", calc.getNumber1(), calc.getSign(), calc.getNumber2(), result);
+        return calc.calculate();
+    }
+    
+    private static void displayResult(int result) {
+        System.out.printf("%d %c %d = %d\n", calc.getArg1(), calc.getSign(), calc.getArg2(), result);
     }
 }

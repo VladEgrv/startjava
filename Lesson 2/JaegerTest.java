@@ -24,7 +24,6 @@ public class JaegerTest {
         Jaeger strikerEureka = new Jaeger("Striker Eureka", "Mark-5", "Australia",
                 1850.0f, 76.2f, 10, 9);
         
-        
         System.out.println("\n\nStriker Eureka:");
         System.out.println("Model Name: " + strikerEureka.getModelName());
         System.out.println("Mark: " + strikerEureka.getMark());
